@@ -1,0 +1,26 @@
+@use "../modules/globalVars" as globalVars;
+
+@keyframes scroll {
+	to {
+		transform: translate(calc(-50% - 0.5rem));
+	}
+}
+/* general styles */
+.scroller {
+    background-color: #175707;
+}
+
+.scroller[data-animated="true"] {
+	overflow: hidden;
+	.scroller__inner {
+		width: max-content;
+		flex-wrap: nowrap;
+		animation: scroll var(20s, 5s) var(reverse, forwards) linear infinite;
+	}
+}
+
+.tag-list {
+	li {
+        @include globalVars.outfit-bold;
+	}
+}

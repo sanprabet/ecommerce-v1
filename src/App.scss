@@ -1,0 +1,6 @@
+@use "./components/Shared/modules/globalVars" as globalVars;
+
+*{
+    @include globalVars.outfit-normal;
+    box-sizing: border-box;
+}

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+@mixin outfit-normal {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+};
+
+@mixin outfit-bold {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
