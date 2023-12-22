@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
+$screen-sm-min: 300px;
+$screen-md-min: 425px;
+$screen-lg-min: 768px;
+$screen-xl-min: 1024px;
+
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+ @mixin rwd($screen) {
+    @media (min-width: $screen) {
+        @content;
+    }
+ }
+
+// Font
 @mixin outfit-normal {
     font-family: 'Outfit', sans-serif;
     font-weight: 400;

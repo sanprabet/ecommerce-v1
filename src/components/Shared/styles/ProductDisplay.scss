@@ -1,0 +1,80 @@
+@use "../../Shared/modules/globalVars" as globalVars;
+
+
+.productDisplay__imageContainer:hover {
+    .addToCart__container{
+        display: none;
+        @include globalVars.xl{
+            display: flex;
+        }
+    }
+    .video__container{
+        display: flex;
+    }
+}
+
+.addToCart__container{
+    display: None;
+    @include globalVars.xl {
+        display: flex;
+    }
+}
+
+.addToCart__button{
+    :hover{
+        transform: scale(1.1);
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+.video__container{
+    display: flex;
+    right: 2px;
+    :hover{
+        transform: scale(1.15);
+        transition: transform 0.5s ease-in-out;
+    }
+    @include globalVars.xl {
+        display: None;
+        right: 0;
+    }
+}
+
+.productDisplay__mobile{
+    display: flex;
+    :hover{
+        transform: scale(1.1);
+        transition: transform 0.5s ease-in-out;
+    }
+    @include globalVars.xl {
+        display: None;
+        right: 2px;
+    }
+}
+
+.slide-top {
+	animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@keyframes slide-top {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+}
+
+.slide-left {
+    animation: slide-left 0.5s ease-in-out both;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}

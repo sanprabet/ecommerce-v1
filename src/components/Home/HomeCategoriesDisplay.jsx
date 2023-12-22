@@ -1,4 +1,6 @@
 import React from 'react';
+
+import HomeCategory from './HomeCategory';
 import "./styles/HomeCategoriesDisplay.scss"
 
 import Category1 from "../../static/Category1.png"
@@ -45,15 +47,9 @@ function HomeCategoriesDisplay() {
   return (
     <div className='mb-5'>
       <h2 className='text-center text-2xl font-bold my-5'>Categorias</h2>
-      <div className="grid grid-cols-2 min-[768px]:grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 min-[768px]:grid-cols-3 gap-4">
         {categories.map((category) => (
-          <div key={category.id} className="aspect-w-1 aspect-h-1">
-              <img
-                className="w-full h-full"
-                src={category.imageUrl}
-                alt={category.name}
-              />
-          </div>
+          <HomeCategory key={category.id} img={category.imageUrl} name={category.name}/>
         ))}
       </div>
     </div>

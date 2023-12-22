@@ -8,34 +8,34 @@ import NavBarCategorySearch from "../components/NavBar/NavBarCategorySearch"
 
 export function NavBarDesktop() {
   return (
-    <div className="navbar">
-        <div className="navbar--up w-full h-20 py-3 px-20 flex flex-row justify-between">
-            <div className="navbar--upRight flex">
-                <NavBarLogo/>
-                <NavBarSearch />
-            </div>
-            <div className='my-auto'>
-              <NavBarShoppingCar />
-            </div>
+    <>
+      <div className="w-full h-20 py-3 px-20 flex flex-row justify-between">
+        <div className="flex">
+            <NavBarLogo/>
+            <NavBarSearch />
         </div>
-        <NavBarProducts />
-    </div>
+        <div className='my-auto'>
+          <NavBarShoppingCar />
+        </div>
+      </div>
+      <NavBarProducts />
+    </>
   )
 }
 
 export function NavBarMobile(){
   return(
-    <div className="w-full h-14 flex px-3 flex-row justify-between">
-            <div className='h-14 my-auto flex'>
-              <NavBarCategorySearch />
-              <NavBarSearchIcon />
-            </div>
-            <div className="navbar--upRight flex">
-                <NavBarLogo />
-            </div>
-            <div className='h-14 my-auto flex'>
-              <NavBarShoppingCar />
-            </div>
+    <div className="w-full h-14 px-3 flex flex-row justify-between">
+		<div className='h-14 my-auto flex'>
+			<NavBarCategorySearch />
+			<NavBarSearchIcon />
+		</div>
+		<div className="flex">
+			<NavBarLogo />
+		</div>
+		<div className='h-14 my-auto flex'>
+			<NavBarShoppingCar />
+		</div>
     </div>
   )
 }

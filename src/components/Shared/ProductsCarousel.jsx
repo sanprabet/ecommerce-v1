@@ -8,8 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles/SpecsCarousel.scss';
 import { Navigation, Pagination } from 'swiper/modules';
-
-import PlusIcon from "../../static/plus-icon.svg"
+import ProductDisplay from "./ProductDisplay"
 
 import ApplePipe from "../../static/Products/ApplePipe.png"
 import BigGlassBong from "../../static/Products/BigGlassBong.png"
@@ -41,15 +40,15 @@ export default function ProductsCarousel() {
             slidesPerView: 1,
             spaceBetween: 5,
           },
-          320: {
+          360: {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          630: {
+          768: {
             slidesPerView: 3,
             spaceBetween: 10,
           },
-          768: {
+          1024: {
             slidesPerView: 4,
             spaceBetween: 10,
           },
@@ -60,22 +59,7 @@ export default function ProductsCarousel() {
       >
         {products.map((product) => (
             <SwiperSlide className='min-h-fit' key={product.id}>
-                <div className="relative">
-                    <img src={product.img} alt={product.name} />
-                    <div className='w-full flex justify-center absolute bottom-2 right-0'>
-                      <div className="w-10/12 h-9 flex justify-center content-center align-middle text-center bg-white border-2 border-black">
-                        <span className='leading-8 text-lg'>Añadir al carrito</span>
-                      </div>
-                    </div>
-                    <div className='px-2 text-center absolute top-2 right-2 bg-white border-2 border-black font-bold rounded-full'>
-                      <img src="" alt="" />
-                    </div>
-                </div>
-                <div className='mt-3 flex flex-col'>
-                  <span className='text-center text-lg'>{product.name}</span>
-                  <span className='text-center text-sm text-gray-700'>{product.category}</span>
-                  <span className='mt-1 text-center text-base font-bold'>{product.price}</span>
-                </div>
+              <ProductDisplay id={product.id} name={product.name} price={product.price} category={product.category} img={product.img} />
             </SwiperSlide>
         ))}
       </Swiper>
