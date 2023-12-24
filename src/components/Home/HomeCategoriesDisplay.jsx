@@ -3,12 +3,12 @@ import React from 'react';
 import HomeCategory from './HomeCategory';
 import "./styles/HomeCategoriesDisplay.scss"
 
-import Category1 from "../../static/Category1.png"
-import Category2 from "../../static/Category2.png"
-import Category3 from "../../static/Category3.png"
-import Category4 from "../../static/Category4.png"
-import Category5 from "../../static/Category5.png"
-import Category6 from "../../static/Category6.png"
+import Category1 from "../../static/Categories/ParaArmar.png"
+import Category2 from "../../static/Categories/ParaPrender.png"
+import Category3 from "../../static/Categories/Semillas.png"
+import Category4 from "../../static/Categories/Insumos.png"
+import Category5 from "../../static/Categories/Autocultivo.png"
+import Category6 from "../../static/Categories/Cursos.png"
 
 const categories = [
     {

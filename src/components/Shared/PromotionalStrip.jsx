@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles/PromotionalStrip.scss';
 
 function InfiniteScrollBrand({ children, direction = 'forwards', speed = '40s' }) {
@@ -30,8 +30,7 @@ function InfiniteScrollBrand({ children, direction = 'forwards', speed = '40s' }
   };
 
   const removeAnimation = () => {
-    scrollerRef.current.removeAttribute('data-animated');
-    scrollerInnerRef.current.style.animation = '';
+    return null
   };
 
   return (
@@ -47,8 +46,9 @@ function InfiniteScrollBrand({ children, direction = 'forwards', speed = '40s' }
   );
 }
 
-export default function PromotionalStrip() {
+export default function PromotionalStrip({displayConfig}) {
   return (
+    <div className={displayConfig}>
       <InfiniteScrollBrand>
         <ul className="tag-list scroller__inner my-1 flex flex-wrap gap-4 list-none">
           <li className='p-2 font-bold italic text-sm text-white'>ENVIO GRATIS EN BOGOTA POR COMPRAS DESDE $80.000</li>
@@ -56,5 +56,6 @@ export default function PromotionalStrip() {
           <li className='p-2 font-bold italic text-sm text-white'>ENVIO GARANTIZADO DE 4 A 5 DIAS</li>
         </ul>
       </InfiniteScrollBrand>
+    </div>
   );
 }

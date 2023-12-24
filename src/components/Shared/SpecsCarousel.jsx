@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 import './styles/SpecsCarousel.scss';
 import DeliveryLogo from "../../static/DeliveryIcon.svg"
@@ -50,9 +49,16 @@ export default function SpecsCarousel() {
             spaceBetween: 10,
           },
         }}
-        className="w-11/12 my-5 px-6"
-        modules={[Navigation]}
-        navigation={true}
+        className="w-11/12 my-1 py-4 pb-5"
+        modules={[Pagination]}
+        pagination={true}
+        style={{
+          "--swiper-pagination-color": "#000000",
+          "--swiper-pagination-bullet-inactive-color": "#999999",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          "--swiper-pagination-bullet-size": "8px",
+          "--swiper-pagination-bullet-horizontal-gap": "6px"
+        }}
       >
         {cardsData.map((card) => (
             <SwiperSlide key={card.id}>

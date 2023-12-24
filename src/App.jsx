@@ -1,18 +1,20 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { NavBarDesktop, NavBarMobile } from './pages/NavBar'
+import { Routes, Route } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Product from './pages/Product'
-import PromotionalStrip from './components/Shared/PromotionalStrip'
-import { Routes, Route } from 'react-router-dom'
+
+import { useWindowDimensions } from "./components/Shared/FunctionalViewPortGetter"
 import './App.scss'
 
 function App() {
-
+  const {width} = useWindowDimensions()
+  console.log(width)
   return  (
     <div className='app-container box-border'>
-      <PromotionalStrip />
-      <NavBarDesktop />
+      { width > 768? <NavBarDesktop />:  <NavBarMobile />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

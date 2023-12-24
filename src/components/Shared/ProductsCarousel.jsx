@@ -56,6 +56,13 @@ export default function ProductsCarousel() {
         className="mySwiper w-11/12 my-1 pb-8"
         modules={[Pagination]}
         pagination={true}
+        style={{
+          "--swiper-pagination-color": "#000000",
+          "--swiper-pagination-bullet-inactive-color": "#999999",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          "--swiper-pagination-bullet-size": "8px",
+          "--swiper-pagination-bullet-horizontal-gap": "6px"
+        }}
       >
         {products.map((product) => (
             <SwiperSlide className='min-h-fit' key={product.id}>

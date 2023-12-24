@@ -1,13 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function NavBarProductLinks({category, link}) {
+import NavBarProductLinksMenu from './NavBarProductLinksMenu'
+import "./styles/NavBarProductLinks.scss"
+
+function NavBarProductLinks({category, link, subCategories}) {
   return (
-    <Link to={link}>
-        <span className='product_link mr-10 leading-5 hover:underline'>
-            <span className='text-sm font-bold'>{category}</span>
-        </span>
-    </Link>
+    <>
+      <span className='navBarProductLinks__link mr-10 py-3 relative leading-5 hover:underline'>
+          <Link to={link} className='text-sm font-bold'>{category}</Link>
+          <div className="navBarProductLinks__menu w-max absolute border bg-white">
+            <div className="w-full pr-5 pl-2 flex flex-col divide-y">
+              {
+                subCategories && subCategories.map((card) => (
+                  <NavBarProductLinksMenu key={card.id} category={card.category} />
+              ))}
+            </div>
+          </div>
+      </span>
+    </>
   )
 }
 
