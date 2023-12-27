@@ -38,17 +38,10 @@ export function NavBarMobile(){
   return(
     <Headroom style={{zIndex: 1000, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
-      <div className=' w-full h-14 px-3 flex flex-row justify-between'>
-        <div className='h-14 my-auto flex'>
-          <NavBarCategorySearch />
+      <div className=' w-full h-14 p-3 flex flex-row justify-between'>
           <NavBarSearchIcon />
-        </div>
-        <div className="flex">
           <NavBarLogo />
-        </div>
-        <div className='h-14 my-auto flex'>
           <NavBarShoppingCar />
-        </div>
       </div>
     </Headroom>
   )

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@smakss/react-scroll-direction": "^3.1.4",
+    "lucide-react": "^0.302.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",

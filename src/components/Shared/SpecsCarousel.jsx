@@ -8,10 +8,10 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 import './styles/SpecsCarousel.scss';
-import DeliveryLogo from "../../static/DeliveryIcon.svg"
-import LegalHammer from "../../static/legal.svg"
-import QualitySeal from "../../static/quality-seal.svg"
-import CustomerService from "../../static/customer_service.svg"
+import DeliveryLogo from "../../static/Icons/DeliveryIcon.svg"
+import LegalHammer from "../../static/Icons/legal.svg"
+import QualitySeal from "../../static/Icons/quality-seal.svg"
+import CustomerService from "../../static/Icons/customer_service.svg"
 
 const cardsData = [
     {id: 3, title: 'Pago Seguro', content: 'Compra segura con Mercado Pagos', icon: QualitySeal, icon_description: "Sello de Calidad"},
@@ -28,7 +28,7 @@ export default function SpecsCarousel() {
         slidesPerView={1}
         spaceBetween={10}
         breakpoints={{
-          320: {
+          100: {
             slidesPerView: 1,
             spaceBetween: 5,
           },

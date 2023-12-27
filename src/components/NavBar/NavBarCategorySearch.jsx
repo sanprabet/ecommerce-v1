@@ -1,5 +1,5 @@
 import React from 'react'
-import hamburguer from '../../static/hamburger.svg'
+import hamburguer from '../../static/Icons/hamburger.svg'
 
 function NavBarCategorySearch() {
   return (

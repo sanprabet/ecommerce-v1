@@ -14,7 +14,6 @@ export function isAtTheTop(){
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY)
       setIsAtTop(window.scrollY < 25);
     };
  
@@ -36,8 +35,7 @@ export function useWindowDimensions() {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
-    
-    console.log(windowDimensions)
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);

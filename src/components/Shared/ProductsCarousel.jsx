@@ -36,7 +36,7 @@ export default function ProductsCarousel() {
         spaceBetween={10}
         loop={true}
         breakpoints={{
-          300: {
+          100: {
             slidesPerView: 1,
             spaceBetween: 5,
           },

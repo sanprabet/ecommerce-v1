@@ -1,5 +1,5 @@
 import React from 'react'
-import magnifying_glass from '../../static/magnifying-glass.svg'
+import magnifying_glass from '../../static/Icons/magnifying-glass.svg'
 
 function NavBarSearchIcon() {
   return (
