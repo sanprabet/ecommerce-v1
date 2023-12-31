@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../static/punto.png"
+import logo from "../../static/LosPuntosLogo.png"
 import { Link } from 'react-router-dom'
 import "./styles/NavBarLogo.scss"
 
