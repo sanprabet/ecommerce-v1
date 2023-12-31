@@ -1,37 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import FooterDropDownMenu from '../Footer/FooterDropDownMenu'
+import FooterDropDownLinkMenu from '../Footer/FooterDropDownLinkMenu'
+import FooterEmailListing from '../Footer/FooterEmailListing'
+import FooterColumnLinks from '../Footer/FooterColumnLinks'
+
+const terms = [
+    {id: 0 ,category: "Terminos y Condiciones"}, 
+    {id: 1 ,category: "Politicas De Privacidad"}, 
+    {id: 2 ,category: "Politicas De Cookies"}, 
+    {id: 3 ,category: "Politicas De Devoluciones"}
+]
+
+const information = [
+    {id: 0 ,category: "+57 3046390341"}, 
+    {id: 1 ,category: "lacanameracol@gmail.com"}, 
+    {id: 2 ,category: "BOG - Calle 34 # 19 - 31"}, 
+    {id: 3 ,category: "CALI - Calle 5 # 64 - 48 L20"}
+]
 
 export function FooterDesktop() {
-  return (
-    <footer className='px-2 py-5 flex flex-row bg-zinc-900 text-white'>
-        <div className='w-3/5 p-1'>
-            <h3 className='text-xl'>¡Se un miembro de <span className='text-orange-400'>LosPuntos.co</span>!</h3>
-            <p className='text-xs w-10/11 '>Recibe un <span className='text-orange-400'>10% OFF</span> en tu proxima compra.</p>
-            <div className='flex flex-row'>
-                <input className='FooterDesktopEmailInput  h-8 mt-2 px-3' type="text" placeholder='Tu Email' />
-                <button className=''>Enviar</button>
-            </div>
+    return (
+    <footer className='min-w-56 p-5 flex flex-row flex-wrap justify-evenly bg-zinc-900 text-white'>
+        <div className='min-w-max px-5'>
+            <FooterEmailListing />
         </div>
-        <div className='w-1/5'>
-            a
+        <div className='min-w-max flex flex-col content-center px-4'>
+            <h4 className='min-[640px]:text-lg min-[768px]:text-xl text-start'>Informacion General</h4>
+            <p className='min-[640px]:text-xs min-[768px]:text-sm text-start text-zinc-500'>+57 3046390341</p>
+            <p className='min-[640px]:text-xs min-[768px]:text-sm text-start text-zinc-500'>lacanameracol@gmail.com</p>
+            <p className='min-[640px]:text-xs min-[768px]:text-sm text-start text-zinc-500'>BOG - Calle 34 # 19 - 31</p>
+            <p className='min-[640px]:text-xs min-[768px]:text-sm text-start text-zinc-500'>CALI - Calle 5 # 64 - 48 L20</p>
         </div>
-        <div className='w-1/5'>
-            a
+        <div className='min-w-max px-5'>
+            <FooterColumnLinks terms={terms} />
         </div>
-  </footer>
-  )
+    </footer>
+    )
 }
 
-export function FooterMobile() {
-  return (
-    <footer className='p-5 flex flex-row bg-zinc-900 text-white'>
-        <div className='w-1/3'>
-            <h3 className='text-sm'>Se un miembro de Los puntos!!</h3>
-            <p className=''>Recibe un 10% en tu proxima compra y enterate de todas nuestras promos</p>
-            <input type="text" />
-        </div>
-        <div className='w-2/3'>
-            a
-        </div>
-  </footer>
-  )
+export function FooterMobile() { 
+    return (
+    <>
+        <footer className='p-4 flex flex-col justify-center bg-zinc-900 text-white'>
+            <FooterEmailListing />
+            <FooterDropDownMenu title={"Informacion de Contacto"} terms={information} />
+            <FooterDropDownLinkMenu title={"Links Legales"} terms={terms} />
+        </footer>
+    </>
+    )
 }

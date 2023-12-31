@@ -16,7 +16,7 @@ export function NavBarDesktop() {
   const isAtTop = isAtTheTop()
   const displayPromotionalStrip = isAtTop? "": "hidden";
   return (
-    <Headroom style={{zIndex: 1000, backgroundColor: "white"}}>
+    <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className="w-full h-20 py-3 px-20 flex flex-row justify-between">
         <div className="flex">
@@ -36,7 +36,7 @@ export function NavBarMobile(){
   const isAtTop = isAtTheTop()
   const displayPromotionalStrip = isAtTop? "": "hidden";
   return(
-    <Headroom style={{zIndex: 1000, backgroundColor: "white"}}>
+    <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className=' w-full h-14 p-3 flex flex-row justify-between'>
           <NavBarSearchIcon />

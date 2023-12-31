@@ -1,34 +1,70 @@
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
-import { useContext, createContext, useState } from "react"
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const SidebarContext = createContext()
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/scrollbar';
 
-export default function Sidebar({ children }) {
-  const [expanded, setExpanded] = useState(true)
-  
+import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
+
+export default function SideCart() {
   return (
-    <aside>
-      <nav className="h-full inline-flex flex-col bg-black border-r shadow-sm">
-        <div className="p-4 pb-2 flex justify-between items-center">
-          <button
-            onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
-          >
-            {expanded ? "a" : "b"}
-          </button>
-        </div>
-
-
-        <div className="border-t flex p-3">
-          <div
-            className={`
-              flex justify-between items-center
-              overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
-          `}
-          >
-          </div>
-        </div>
-      </nav>
-    </aside>
-  )
+    <>
+      <Swiper
+        direction={'vertical'}
+        slidesPerView={'auto'}
+        freeMode={true}
+        scrollbar={true}
+        mousewheel={true}
+        modules={[FreeMode, Scrollbar, Mousewheel]}
+        className="mySwiper "
+      >
+        <SwiperSlide>
+          <h4>Scroll Container</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus,
+            ex eu sagittis faucibus, ligula ipsum sagittis magna, et imperdiet
+            dolor lectus eu libero. Vestibulum venenatis eget turpis sed
+            faucibus. Maecenas in ullamcorper orci, eu ullamcorper sem. Etiam
+            elit ante, luctus non ante sit amet, sodales vulputate odio. Aenean
+            tristique nisl tellus, sit amet fringilla nisl volutpat cursus.
+            Quisque dignissim lectus ac nunc consectetur mattis. Proin vel
+            hendrerit ipsum, et lobortis dolor. Vestibulum convallis, nibh et
+            tincidunt tristique, nisl risus facilisis lectus, ut interdum orci
+            nisl ac nunc. Cras et aliquam felis. Quisque vel ipsum at elit
+            sodales posuere eget non est. Fusce convallis vestibulum dolor non
+            volutpat. Vivamus vestibulum quam ut ultricies pretium.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus,
+            ex eu sagittis faucibus, ligula ipsum sagittis magna, et imperdiet
+            dolor lectus eu libero. Vestibulum venenatis eget turpis sed
+            faucibus. Maecenas in ullamcorper orci, eu ullamcorper sem. Etiam
+            elit ante, luctus non ante sit amet, sodales vulputate odio. Aenean
+            tristique nisl tellus, sit amet fringilla nisl volutpat cursus.
+            Quisque dignissim lectus ac nunc consectetur mattis. Proin vel
+            hendrerit ipsum, et lobortis dolor. Vestibulum convallis, nibh et
+            tincidunt tristique, nisl risus facilisis lectus, ut interdum orci
+            nisl ac nunc. Cras et aliquam felis. Quisque vel ipsum at elit
+            sodales posuere eget non est. Fusce convallis vestibulum dolor non
+            volutpat. Vivamus vestibulum quam ut ultricies pretium.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus,
+            ex eu sagittis faucibus, ligula ipsum sagittis magna, et imperdiet
+            dolor lectus eu libero. Vestibulum venenatis eget turpis sed
+            faucibus. Maecenas in ullamcorper orci, eu ullamcorper sem. Etiam
+            elit ante, luctus non ante sit amet, sodales vulputate odio. Aenean
+            tristique nisl tellus, sit amet fringilla nisl volutpat cursus.
+            Quisque dignissim lectus ac nunc consectetur mattis. Proin vel
+            hendrerit ipsum, et lobortis dolor. Vestibulum convallis, nibh et
+            tincidunt tristique, nisl risus facilisis lectus, ut interdum orci
+            nisl ac nunc. Cras et aliquam felis. Quisque vel ipsum at elit
+            sodales posuere eget non est. Fusce convallis vestibulum dolor non
+            volutpat. Vivamus vestibulum quam ut ultricies pretium.
+          </p>
+        </SwiperSlide>
+      </Swiper>
+    </>
+  );
 }
