@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
-import { NavBarDesktop, NavBarMobile } from './pages/NavBar'
-import { FooterDesktop, FooterMobile } from "./components/Shared/Footer"
+import React, { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+// Contexts
+import { dimensionsContext } from "./components/Shared/Contexts"
 
+// Components
+import { FooterDesktop, FooterMobile } from "./components/Shared/Footer"
+import { NavBarDesktop, NavBarMobile } from './pages/NavBar'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import SideCartContainer from './components/Shared/SideCartContainer'
 
-import { useWindowDimensions } from "./components/Shared/FunctionalViewPortGetter"
+// Styles
 import './App.scss'
 
 function App() {
-  const {width} = useWindowDimensions()
-  
+  const { width } = useContext(dimensionsContext);
+
   return  (
     <div className='relative box-border'>
       { width > 768? <NavBarDesktop />:  <NavBarMobile />}

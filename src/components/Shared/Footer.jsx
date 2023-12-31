@@ -22,7 +22,7 @@ const information = [
 
 export function FooterDesktop() {
     return (
-    <footer className='min-w-56 p-5 flex flex-row flex-wrap justify-evenly bg-zinc-900 text-white'>
+    <footer className='min-w-56 p-5 flex flex-row flex-wrap justify-around bg-zinc-900 text-white'>
         <div className='min-w-max px-5'>
             <FooterEmailListing />
         </div>

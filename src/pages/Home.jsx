@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+// Context
+import { dimensionsContext } from '../components/Shared/Contexts'
 
 // Components
 import SpecsCarousel from "../components/Shared/SpecsCarousel"
@@ -6,7 +9,6 @@ import HomeBannerCarousel from "../components/Home/HomeBannerCarousel"
 import OpinionsCarousel from "../components/Shared/OpinionsCarousel"
 import HomeCategory from '../components/Home/HomeCategory';
 import ProductsCarousel from '../components/Shared/ProductsCarousel'
-import { useWindowDimensions } from "../components/Shared/FunctionalViewPortGetter"
 
 // Images
 import Category1 from "../static/Categories/ParaArmar.png"
@@ -71,7 +73,7 @@ const categories = [
 ]
 
 function Home() {
-  const {width} = useWindowDimensions()
+  const {width} = useContext(dimensionsContext)
   const HeroImages =  width > 768? HeroDesktop: HeroMobile;
   return (
     <>

@@ -1,6 +1,4 @@
 import React from 'react'
-import logo_img from '../../static/logo.webp'
-import logonk from '../../static/logo-nk-square-white.jpg'
 import logo from "../../static/punto.png"
 import { Link } from 'react-router-dom'
 import "./styles/NavBarLogo.scss"

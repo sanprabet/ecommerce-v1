@@ -2,8 +2,8 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Link } from 'react-router-dom'
 
-import "./styles/ProductDisplay.scss"
 import VideoCamera from "../../static/Icons/VideoIcon.svg"
+import "./styles/ProductDisplay.scss"
 
 function ProductDisplay({name, category, price, img}) {
   return (
@@ -16,7 +16,7 @@ function ProductDisplay({name, category, price, img}) {
                 </div>
             </div>
             <div className='video__container slide-left p-2 w-10 h-10 absolute top-2 bg-white rounded-full border-1 border-black text-center font-bold cursor-pointer'>
-                <img src={VideoCamera} alt="" />
+                <img src={VideoCamera} alt="Video Icon" />
             </div>
         </Link>
         <div className='productDisplay__mobile h-11 mt-2 justify-center content-center align-middle text-center bg-white border-2 border-black cursor-pointer'>

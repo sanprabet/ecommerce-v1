@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Headroom from "react-headroom"
 
+// Contexts
+import { isAtTheTopContext } from "../components/Shared/Contexts"
+
+// Componenta
 import NavBarProducts from '../components/NavBar/NavBarProducts';
 import NavBarLogo from '../components/NavBar/NavBarLogo';
 import NavBarSearch from '../components/NavBar/NavBarSearch';
-import NavBarShoppingCar from '../components/NavBar/NavBarShoppingCar';
 import NavBarSearchIcon from '../components/NavBar/NavBarSearchIcon';
-import NavBarCategorySearch from '../components/NavBar/NavBarCategorySearch';
 import PromotionalStrip from '../components/Shared/PromotionalStrip';
+import { NavBarShoppingCartMobile, NavBarShoppingCartDesktop } from '../components/NavBar/NavBarShoppingCar';
 
-import {isAtTheTop} from "../components/Shared/FunctionalViewPortGetter"
+// Styles
 import './styles/NavBar.scss';
 
 export function NavBarDesktop() {
-  const isAtTop = isAtTheTop()
+  const { isAtTop } = useContext(isAtTheTopContext)
   const displayPromotionalStrip = isAtTop? "": "hidden";
+
   return (
     <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
@@ -24,7 +28,7 @@ export function NavBarDesktop() {
           <NavBarSearch />
         </div>
         <div className='my-auto'>
-          <NavBarShoppingCar />
+          <NavBarShoppingCartDesktop />
         </div>
       </div>
       <NavBarProducts />
@@ -33,15 +37,16 @@ export function NavBarDesktop() {
 }
 
 export function NavBarMobile(){
-  const isAtTop = isAtTheTop()
+  const { isAtTop } = useContext( isAtTheTopContext )
   const displayPromotionalStrip = isAtTop? "": "hidden";
+
   return(
     <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className=' w-full h-14 p-3 flex flex-row justify-between'>
           <NavBarSearchIcon />
           <NavBarLogo />
-          <NavBarShoppingCar />
+          <NavBarShoppingCartMobile />
       </div>
     </Headroom>
   )
