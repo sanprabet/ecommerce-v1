@@ -10,7 +10,7 @@ import CloseIcon from "../static/Icons/close-x.svg"
 export default function SideSearch() {
   const { categorySlideOpen, setCategorySlideOpen } = useContext(categoriesSlideOpenContext);
 
-  const isHidden = categorySlideOpen? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-50" : "hidden";
+  const isHidden = categorySlideOpen? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-40" : "hidden";
   
   return (
     <div className={isHidden}>

@@ -13,7 +13,7 @@ export default function SideCart() {
   const [items, setItems] = useState(0)
   const { shopingCart, setshopingCart } = useContext(cartSlideOpenContext);
 
-  const isHidden = shopingCart? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-50" : "hidden";
+  const isHidden = shopingCart? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-40" : "hidden";
   
   return (
     <div className={isHidden}>

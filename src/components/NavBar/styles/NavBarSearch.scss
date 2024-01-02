@@ -2,15 +2,30 @@
 
 .navbar__search{
     form{
-        background-color: #FAFAFA;
+        background-color: #ededed;
     }
 }
 
 .navbar__search--input{
     @include globalVars.outfit-normal;
-    background-color: #FAFAFA;
+    background-color: #ededed;
 }
 
 .navbar__search--input::placeholder{
     color: #212121;
 }
+
+.navbar__search--desktopMenu{
+    width: 32rem;
+    border: 1px #ededed solid;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    background: white;
+    border-radius: 0.25rem;
+    z-index: 50;
+}
+
+.navbar__search--input:focus-visible .navbar__search--desktopMenu {
+    display: flex;
+ }

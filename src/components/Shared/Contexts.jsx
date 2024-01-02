@@ -7,6 +7,7 @@ export const isUserScrollAtTopContext = createContext(null);
 export const dimensionsContext = createContext(null);
 export const searchSlideOpenContext = createContext(null);
 export const categoriesSlideOpenContext = createContext(null);
+export const desktopNavBarSearchDropdownOpenContext = createContext(null);
 
 
 function Contexts({children }) {
@@ -53,36 +54,45 @@ function Contexts({children }) {
     };
   }, []);
 
-  //
+  // desktopNavBarSearchDropdownOpenContext
+  const [navBarSearchDropdownOpen, setNavBarSearchDropdownOpen] = useState(false);
 
 
   return (
-    <cartSlideOpenContext.Provider
+
+    <desktopNavBarSearchDropdownOpenContext.Provider
       value={{
-          shopingCart,
-          setshopingCart
+        navBarSearchDropdownOpen,
+        setNavBarSearchDropdownOpen
       }}
     >
-      <categoriesSlideOpenContext.Provider
+      <cartSlideOpenContext.Provider
         value={{
-          categorySlideOpen,
-          setCategorySlideOpen
+            shopingCart,
+            setshopingCart
         }}
       >
-        <searchSlideOpenContext.Provider
+        <categoriesSlideOpenContext.Provider
           value={{
-            searchSlideOpen,
-            setSearchSlideOpen
+            categorySlideOpen,
+            setCategorySlideOpen
           }}
         >
-          <isUserScrollAtTopContext.Provider value={isAtTop}> {/* isAtTop format is bool */}
-             <dimensionsContext.Provider value={windowDimensions}>  {/* windowDimensions format is { width, height } */}
-                {children}
-            </dimensionsContext.Provider>
-          </isUserScrollAtTopContext.Provider>
-        </searchSlideOpenContext.Provider>
-      </categoriesSlideOpenContext.Provider>
-    </cartSlideOpenContext.Provider>
+          <searchSlideOpenContext.Provider
+            value={{
+              searchSlideOpen,
+              setSearchSlideOpen
+            }}
+          >
+            <isUserScrollAtTopContext.Provider value={isAtTop}> {/* isAtTop format is bool */}
+              <dimensionsContext.Provider value={windowDimensions}>  {/* windowDimensions format is { width, height } */}
+                  {children}
+              </dimensionsContext.Provider>
+            </isUserScrollAtTopContext.Provider>
+          </searchSlideOpenContext.Provider>
+        </categoriesSlideOpenContext.Provider>
+      </cartSlideOpenContext.Provider>
+    </desktopNavBarSearchDropdownOpenContext.Provider>
   )
 }
 
