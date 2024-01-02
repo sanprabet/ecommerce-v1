@@ -17,7 +17,6 @@ function ShoppingCart(){
 
 export function NavBarShoppingCartDesktop(){
   const {
-    shopingCart,
     setshopingCart
   } = useContext(shoppingCartOpenContext);
 
@@ -25,13 +24,5 @@ export function NavBarShoppingCartDesktop(){
     <div onClick={() => setshopingCart(true)}>
       <ShoppingCart />
     </div>
-  )
-}
-
-export function NavBarShoppingCartMobile(){
-  return(
-    <Link to="/cart">
-      <ShoppingCart />
-    </Link>
   )
 }

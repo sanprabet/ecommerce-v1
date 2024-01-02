@@ -1,11 +1,15 @@
 import React, { useState, useContext } from "react"
-import SideCartVoid from "./SideCartVoid";
-import { shoppingCartOpenContext } from "./Contexts"
 
-import "./styles/SideCartContainer.scss";
-import CloseIcon from "../../static/Icons/close-x.svg"
+// Components
+import { shoppingCartOpenContext } from "../components/Shared/Contexts"
+import SideCartVoid from "../components/Shared/SideCartVoid";
+import SideCartItems from "../components/Shared/SideCartItems";
 
-export default function SideCartContainer() {
+// Styles
+import "./styles/SideCart.scss";
+import CloseIcon from "../static/Icons/close-x.svg"
+
+export default function SideCart() {
   const [items, setItems] = useState(0)
   const { shopingCart, setshopingCart } = useContext(shoppingCartOpenContext);
 
@@ -22,7 +26,7 @@ export default function SideCartContainer() {
             </div>
             <img onClick={() => setshopingCart(false)} className="h-5 cursor-pointer" src={CloseIcon} alt="close icon" />
           </div>
-          {items? <SideCartVoid />: <SideCartVoid /> }
+          {items? <SideCartItems />: <SideCartVoid /> }
           
         </div>
       </div>

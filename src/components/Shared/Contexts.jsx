@@ -5,6 +5,7 @@ import { createContext, useState, useEffect } from 'react';
 export const shoppingCartOpenContext = createContext(null);
 export const isAtTheTopContext = createContext(null);
 export const dimensionsContext = createContext(null);
+export const searchSideOpenContext = createContext(null);
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -16,6 +17,7 @@ function getWindowDimensions() {
 
 function Contexts({children }) {
   const [shopingCart, setshopingCart] = useState(false);
+  const [searchSide, setSearchSide] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
@@ -49,11 +51,18 @@ function Contexts({children }) {
           setshopingCart
       }}
     >
-      <isAtTheTopContext.Provider value={isAtTop}>
-        <dimensionsContext.Provider value={windowDimensions}>
-          {children}
-        </dimensionsContext.Provider>
-      </isAtTheTopContext.Provider>
+      <searchSideOpenContext.Provider
+        value={{
+          searchSide,
+          setSearchSide
+        }}
+      >
+        <isAtTheTopContext.Provider value={isAtTop}>
+          <dimensionsContext.Provider value={windowDimensions}>
+              {children}
+          </dimensionsContext.Provider>
+        </isAtTheTopContext.Provider>
+      </searchSideOpenContext.Provider>
     </shoppingCartOpenContext.Provider>
   )
 }

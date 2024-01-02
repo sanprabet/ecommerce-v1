@@ -5,13 +5,14 @@ import { Routes, Route } from 'react-router-dom'
 import { dimensionsContext } from "./components/Shared/Contexts"
 
 // Components
-import { FooterDesktop, FooterMobile } from "./components/Shared/Footer"
+import { FooterDesktop, FooterMobile } from "./pages/Footer"
 import { NavBarDesktop, NavBarMobile } from './pages/NavBar'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
-import SideCartContainer from './components/Shared/SideCartContainer'
+import SideCart from './pages/SideCart'
+import SideSearch from './pages/SideSearch'
 
 // Styles
 import './App.scss'
@@ -22,7 +23,8 @@ function App() {
   return  (
     <div className='relative box-border'>
       { width > 768? <NavBarDesktop />:  <NavBarMobile />}
-      <SideCartContainer />
+      <SideCart />
+      <SideSearch />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
