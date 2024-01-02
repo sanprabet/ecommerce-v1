@@ -2,24 +2,35 @@ import React from 'react'
 import { createContext, useState, useEffect } from 'react';
 
 
-export const shoppingCartOpenContext = createContext(null);
-export const isAtTheTopContext = createContext(null);
+export const cartSlideOpenContext = createContext(null);
+export const isUserScrollAtTopContext = createContext(null);
 export const dimensionsContext = createContext(null);
-export const searchSideOpenContext = createContext(null);
+export const searchSlideOpenContext = createContext(null);
+export const categoriesSlideOpenContext = createContext(null);
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
 
 function Contexts({children }) {
+  // cartSlideOpenContext
   const [shopingCart, setshopingCart] = useState(false);
-  const [searchSide, setSearchSide] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
+
+  // searchSideOpenContext
+  const [searchSlideOpen, setSearchSlideOpen] = useState(false);
+
+  // categoriesSlideOpenContext
+  const [categorySlideOpen, setCategorySlideOpen] = useState(false);
+
+  // dimensionsContext and isAtTop (contexts share functions)
+
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     function handleResize() {
@@ -37,33 +48,41 @@ function Contexts({children }) {
  
     window.addEventListener('scroll', handleScroll);
  
-    // Cleanup function to remove the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  //
+
 
   return (
-    <shoppingCartOpenContext.Provider
+    <cartSlideOpenContext.Provider
       value={{
           shopingCart,
           setshopingCart
       }}
     >
-      <searchSideOpenContext.Provider
+      <categoriesSlideOpenContext.Provider
         value={{
-          searchSide,
-          setSearchSide
+          categorySlideOpen,
+          setCategorySlideOpen
         }}
       >
-        <isAtTheTopContext.Provider value={isAtTop}>
-          <dimensionsContext.Provider value={windowDimensions}>
-              {children}
-          </dimensionsContext.Provider>
-        </isAtTheTopContext.Provider>
-      </searchSideOpenContext.Provider>
-    </shoppingCartOpenContext.Provider>
+        <searchSlideOpenContext.Provider
+          value={{
+            searchSlideOpen,
+            setSearchSlideOpen
+          }}
+        >
+          <isUserScrollAtTopContext.Provider value={isAtTop}> {/* isAtTop format is bool */}
+             <dimensionsContext.Provider value={windowDimensions}>  {/* windowDimensions format is { width, height } */}
+                {children}
+            </dimensionsContext.Provider>
+          </isUserScrollAtTopContext.Provider>
+        </searchSlideOpenContext.Provider>
+      </categoriesSlideOpenContext.Provider>
+    </cartSlideOpenContext.Provider>
   )
 }
 

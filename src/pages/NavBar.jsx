@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Headroom from "react-headroom"
 
 // Contexts
-import { isAtTheTopContext } from "../components/Shared/Contexts";
+import { isUserScrollAtTopContext } from "../components/Shared/Contexts";
 
 // Componenta
 import NavBarProducts from '../components/NavBar/NavBarProducts';
@@ -16,7 +16,7 @@ import { NavBarShoppingCartDesktop } from '../components/NavBar/NavBarShoppingCa
 import './styles/NavBar.scss';
 
 export function NavBarDesktop() {
-  const { isAtTop } = useContext(isAtTheTopContext)
+  const { isAtTop } = useContext(isUserScrollAtTopContext)
   const displayPromotionalStrip = isAtTop? "": "hidden";
   
   return (
@@ -39,7 +39,7 @@ export function NavBarDesktop() {
 // { width > 768? <FooterDesktop />:  <FooterMobile />}
 
 export function NavBarMobile(){
-  const { isAtTop } = useContext( isAtTheTopContext )
+  const { isAtTop } = useContext( isUserScrollAtTopContext )
   const displayPromotionalStrip = isAtTop? "": "hidden";
 
   return(

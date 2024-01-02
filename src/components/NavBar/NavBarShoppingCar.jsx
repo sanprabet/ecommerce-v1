@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import { shoppingCartOpenContext } from "../Shared/Contexts"
+import { cartSlideOpenContext } from "../Shared/Contexts"
 
 import ShoppingCartIcon from '../../static/Icons/shoping-cart.svg'
 import './styles/NavBarShoppingCar.scss'
@@ -18,7 +18,7 @@ function ShoppingCart(){
 export function NavBarShoppingCartDesktop(){
   const {
     setshopingCart
-  } = useContext(shoppingCartOpenContext);
+  } = useContext(cartSlideOpenContext);
 
   return(
     <div onClick={() => setshopingCart(true)}>

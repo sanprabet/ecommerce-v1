@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react"
 
 // Components
-import { shoppingCartOpenContext } from "../components/Shared/Contexts"
+import { cartSlideOpenContext } from "../components/Shared/Contexts"
 import SideCartVoid from "../components/Shared/SideCartVoid";
 import SideCartItems from "../components/Shared/SideCartItems";
 
@@ -11,7 +11,7 @@ import CloseIcon from "../static/Icons/close-x.svg"
 
 export default function SideCart() {
   const [items, setItems] = useState(0)
-  const { shopingCart, setshopingCart } = useContext(shoppingCartOpenContext);
+  const { shopingCart, setshopingCart } = useContext(cartSlideOpenContext);
 
   const isHidden = shopingCart? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-50" : "hidden";
   

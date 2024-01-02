@@ -2,7 +2,25 @@ import React from 'react'
 
 function Product() {
   return (
-    <div>Product</div>
+    <>
+      <section>
+        guia navegacion
+      </section>
+      <section>
+        <div>
+          producto
+        </div>
+        <div>
+          descripcion
+        </div>
+      </section>
+      <section>
+        descripcion y politicas
+      </section>
+      <section>
+        productos relacionados
+      </section>
+    </>
   )
 }
 
