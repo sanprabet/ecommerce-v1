@@ -1,7 +1,10 @@
 import React, { useState, useContext } from "react"
 
+// Contexts
+import { categoriesSlideOpenContext, dimensionsContext } from "../components/Shared/Contexts"
+
 // Components
-import { categoriesSlideOpenContext } from "../components/Shared/Contexts"
+import SearchMenu from "../components/Shared/SearchMenu"
 
 // Styles
 import "./styles/SideCart.scss";
@@ -9,8 +12,10 @@ import CloseIcon from "../static/Icons/close-x.svg"
 
 export default function SideSearch() {
   const { categorySlideOpen, setCategorySlideOpen } = useContext(categoriesSlideOpenContext);
+  const { width } = useContext(dimensionsContext);
 
-  const isHidden = categorySlideOpen? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-40" : "hidden";
+
+  const isHidden = categorySlideOpen && ( width > 768 )? "h-full w-full bg-gray-400/75 absolute bottom-0 right-0 top-0 left-0 z-40" : "hidden";
   
   return (
     <div className={isHidden}>
@@ -23,7 +28,7 @@ export default function SideSearch() {
             <img onClick={() => setCategorySlideOpen(false)} className="h-5 cursor-pointer" src={CloseIcon} alt="close icon" />
           </div>
           <div className="w-full h-max">
-            A
+            <SearchMenu />
           </div>
         </div>
       </div>

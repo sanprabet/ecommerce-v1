@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Headroom from "react-headroom"
 
 // Contexts
-import { isUserScrollAtTopContext } from "../components/Shared/Contexts";
+import { isUserScrollAtTopContext, desktopNavBarSearchDropdownOpenContext } from "../components/Shared/Contexts";
 
 // Componenta
 import NavBarProducts from '../components/NavBar/NavBarProducts';
@@ -19,8 +19,11 @@ export function NavBarDesktop() {
   const { isAtTop } = useContext(isUserScrollAtTopContext)
   const displayPromotionalStrip = isAtTop? "": "hidden";
   
+  const { setNavBarSearchDropdownOpen } = useContext(desktopNavBarSearchDropdownOpenContext)
+  const handleUnpin = () => setNavBarSearchDropdownOpen(false);
+  
   return (
-    <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
+    <Headroom onUnpin={handleUnpin} style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className="w-full h-20 py-3 px-20 flex flex-row justify-between">
         <div className="flex">

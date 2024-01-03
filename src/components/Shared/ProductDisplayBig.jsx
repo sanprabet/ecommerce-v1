@@ -1,11 +1,10 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { Link } from 'react-router-dom'
 
 import VideoCamera from "../../static/Icons/VideoIcon.svg"
-import "./styles/ProductDisplay.scss"
+import "./styles/ProductDisplayBig.scss"
 
-function ProductDisplay({name, category, price, img}) {
+function ProductDisplayBig({name, category, price, img}) {
   return (
     <>
         <Link to="/product" className="productDisplay__imageContainer relative">
@@ -31,4 +30,4 @@ function ProductDisplay({name, category, price, img}) {
   )
 }
 
-export default ProductDisplay
+export default ProductDisplayBig

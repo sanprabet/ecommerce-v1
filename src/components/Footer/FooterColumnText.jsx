@@ -1,3 +1,5 @@
+// This is for desktop view only
+
 import React from 'react'
 
 function FooterColumnText({title, items}) {

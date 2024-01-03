@@ -1,3 +1,5 @@
+// This is for mobile view only
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 

@@ -1,15 +1,13 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './styles/SpecsCarousel.scss';
-import { Navigation, Pagination } from 'swiper/modules';
-import ProductDisplay from "./ProductDisplay"
+import { Autoplay, Pagination } from 'swiper/modules';
+import ProductDisplaySmall from "./ProductDisplaySmall"
 
+// Styles and Images
 import ApplePipe from "../../static/Products/ApplePipe.png"
 import BigGlassBong from "../../static/Products/BigGlassBong.png"
 import BigHeartsBong from "../../static/Products/BigHeartsBong.png"
@@ -26,9 +24,8 @@ const products = [
     {id: 7, name: 'Bong "Crystal" 50cm', price: "90.000", category: 'Bongs', img: MediumGlassBong},
     {id: 8, name: 'Bong "Bud Light" 50cm', price: "60.000",  category: 'Bongs', img: MediumBudLightBong},
 ]
-  
 
-export default function ProductsCarousel() {
+export default function ProductsCarouselSmall({products_per_page}) {
   return (
     <>
       <Swiper
@@ -37,25 +34,16 @@ export default function ProductsCarousel() {
         loop={true}
         breakpoints={{
           100: {
-            slidesPerView: 1,
+            slidesPerView: products_per_page,
             spaceBetween: 5,
-          },
-          360: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
+          }
         }}
-        className="mySwiper w-11/12 my-1 pb-8"
-        modules={[Pagination]}
-        pagination={true}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        className="mySwiper w-full my-2"
+        modules={[Pagination, Autoplay]}
         style={{
           "--swiper-pagination-color": "#000000",
           "--swiper-pagination-bullet-inactive-color": "#999999",
@@ -66,7 +54,7 @@ export default function ProductsCarousel() {
       >
         {products.map((product) => (
             <SwiperSlide className='min-h-fit' key={product.id}>
-              <ProductDisplay id={product.id} name={product.name} price={product.price} category={product.category} img={product.img} />
+              <ProductDisplaySmall id={product.id} name={product.name} price={product.price} category={product.category} img={product.img} />
             </SwiperSlide>
         ))}
       </Swiper>

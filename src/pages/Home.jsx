@@ -8,7 +8,7 @@ import SpecsCarousel from "../components/Shared/SpecsCarousel"
 import HomeBannerCarousel from "../components/Home/HomeBannerCarousel"
 import OpinionsCarousel from "../components/Shared/OpinionsCarousel"
 import HomeCategory from '../components/Home/HomeCategory';
-import ProductsCarousel from '../components/Shared/ProductsCarousel'
+import ProductsCarouselBig from '../components/Shared/ProductsCarouselBig'
 
 // Images
 import Category1 from "../static/Categories/ParaArmar.png"
@@ -85,7 +85,7 @@ function Home() {
       </section>
       <section className='bg-gray-100'>
         <h2 className='py-5 text-center text-2xl font-bold'>Más Vendidos</h2>
-        <ProductsCarousel />
+        <ProductsCarouselBig />
       </section>
       <section className='mb-5'>
         <h2 className='py-5 text-center text-2xl font-bold'>Categorias</h2>
@@ -97,7 +97,7 @@ function Home() {
       </section>
       <section className='bg-gray-100'>
         <h2 className='py-5 text-center text-2xl font-bold'>Algunas Reviews...</h2>
-        <OpinionsCarousel />
+        <ProductsCarouselBig />
       </section>
     </>
   )
