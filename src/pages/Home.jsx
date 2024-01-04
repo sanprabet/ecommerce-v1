@@ -97,7 +97,7 @@ function Home() {
       </section>
       <section className='bg-gray-100'>
         <h2 className='py-5 text-center text-2xl font-bold'>Algunas Reviews...</h2>
-        <ProductsCarouselBig />
+        <OpinionsCarousel />
       </section>
     </>
   )

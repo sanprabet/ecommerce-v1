@@ -2,7 +2,17 @@ import React from 'react'
 
 function Products() {
   return (
-    <div>Products</div>
+    <>    
+      <div>
+        filter
+      </div>
+      <div>
+        grid items
+      </div>
+      <div>
+        recomended items
+      </div>
+    </>
   )
 }
 
