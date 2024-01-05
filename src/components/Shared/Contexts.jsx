@@ -11,6 +11,9 @@ export const desktopNavBarSearchDropdownOpenContext = createContext(null);
 
 
 function Contexts({children }) {
+  // desktopNavBarSearchDropdownOpenContext
+  const [navBarSearchDropdownOpen, setNavBarSearchDropdownOpen] = useState(false);
+
   // cartSlideOpenContext
   const [shopingCart, setshopingCart] = useState(false);
 
@@ -21,7 +24,6 @@ function Contexts({children }) {
   const [categorySlideOpen, setCategorySlideOpen] = useState(false);
 
   // dimensionsContext and isAtTop (contexts share functions)
-
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
     return {
@@ -54,12 +56,7 @@ function Contexts({children }) {
     };
   }, []);
 
-  // desktopNavBarSearchDropdownOpenContext
-  const [navBarSearchDropdownOpen, setNavBarSearchDropdownOpen] = useState(false);
-
-
   return (
-
     <desktopNavBarSearchDropdownOpenContext.Provider
       value={{
         navBarSearchDropdownOpen,
@@ -97,19 +94,3 @@ function Contexts({children }) {
 }
 
 export default Contexts
-
-
-export function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowDimensions;
-}

@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 
-import FooterDropDownMenu from '../components/Footer/FooterDropDownMenu'
-import FooterDropDownLinkMenu from '../components/Footer/FooterDropDownLinkMenu'
+// Components
 import FooterEmailListing from '../components/Footer/FooterEmailListing'
-import FooterColumnLinks from '../components/Footer/FooterColumnLinks'
-import FooterColumnText from '../components/Footer/FooterColumnText'
+import { MobileFooterDropDownLinkMenu, MobileFooterDropDownMenu } from '../components/Footer/MobileDropdowns'
+import { DesktopFooterColumnText, DesktopFooterColumnLinks } from '../components/Footer/DesktopColumns'
 
+//Information To Pull Up
 const legal_info_links = {
     title: "Links Legales",
     items: [
@@ -38,6 +37,7 @@ const information_column = {
     ]
 }
 
+// Exported Components
 export function FooterDesktop() {
     return (
     <footer className='min-w-56 min-[768px]:p-5 flex flex-row flex-wrap justify-around bg-zinc-900 text-white'>
@@ -45,13 +45,13 @@ export function FooterDesktop() {
             <FooterEmailListing />
         </div>
         <div className='min-[768px]:w-max px-5'>
-            <FooterColumnText title={information_column.title} items={information_column.items}/>
+            <DesktopFooterColumnText title={information_column.title} items={information_column.items}/>
         </div>
         <div className='min-[768px]:w-max px-5'>
-            <FooterColumnLinks title={legal_info_links.title} terms={legal_info_links.items} />
+            <DesktopFooterColumnLinks title={legal_info_links.title} terms={legal_info_links.items} />
         </div>
         <div className='min-[768px]:w-max px-5'>
-            <FooterColumnLinks title={categories_link.title} terms={categories_link.items} />
+            <DesktopFooterColumnLinks title={categories_link.title} terms={categories_link.items} />
         </div>
     </footer>
     )
@@ -64,9 +64,9 @@ export function FooterMobile() {
             <div className='mx-auto'>
                 <FooterEmailListing />
             </div>
-            <FooterDropDownLinkMenu title={legal_info_links.title} terms={legal_info_links.items} />
-            <FooterDropDownLinkMenu title={categories_link.title} terms={categories_link.items} />
-            <FooterDropDownMenu title={information_column.title} terms={information_column.items} />
+            <MobileFooterDropDownLinkMenu title={legal_info_links.title} terms={legal_info_links.items} />
+            <MobileFooterDropDownLinkMenu title={categories_link.title} terms={categories_link.items} />
+            <MobileFooterDropDownMenu title={information_column.title} terms={information_column.items} />
         </footer>
     </>
     )

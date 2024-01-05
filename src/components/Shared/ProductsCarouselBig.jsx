@@ -31,7 +31,6 @@ export default function ProductsCarouselBig() {
   return (
     <>
       <Swiper
-        slidesPerView={1}
         spaceBetween={10}
         loop={true}
         breakpoints={{
@@ -43,12 +42,16 @@ export default function ProductsCarouselBig() {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          768: {
+          420: {
             slidesPerView: 3,
             spaceBetween: 10,
           },
-          1024: {
+          768: {
             slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}

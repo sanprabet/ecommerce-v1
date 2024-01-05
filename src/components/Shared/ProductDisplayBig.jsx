@@ -19,7 +19,7 @@ function ProductDisplayBig({name, category, price, img}) {
             </div>
         </Link>
         <div className='productDisplay__mobile h-11 mt-2 justify-center content-center align-middle text-center bg-white border-2 border-black cursor-pointer'>
-            <span className='w-full min-[100px]:text-base min-[100px]:leading-10 text-base text-center'>AÑADIR AL CARRITO</span>
+            <span className='w-full min-[100px]:text-sm min-[100px]:leading-10 text-base text-center'>AÑADIR AL CARRITO</span>
         </div>
         <div className='mt-3 flex flex-col'>
             <Link to="/product" className='text-center min-[100px]:text-base min-[768px]:text-lg hover:underline'>{name}</Link>

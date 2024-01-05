@@ -11,6 +11,8 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
+import Terms from './pages/Terms'
+
 import SideCart from './pages/SideCart'
 import SideSearch from './pages/SideSearch'
 import SideCategories from './pages/SideCategories'
@@ -32,7 +34,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/terms" element={<Cart />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
       { width > 768? <FooterDesktop />:  <FooterMobile />}
     </div>

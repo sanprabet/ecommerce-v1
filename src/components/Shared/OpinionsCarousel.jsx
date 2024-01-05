@@ -5,12 +5,15 @@ import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css/free-mode';
 import 'swiper/css';
 
-import "./styles/OpinionsCarousel.scss"
-
+// Images
 import PictureGirl from "../../static/ProfilePictures/woman.jpeg"
 import PictureGuy from "../../static/ProfilePictures/man.jpeg"
 import PictureGuy2 from "../../static/ProfilePictures/man1.jpeg"
 
+//Styles
+import "./styles/OpinionsCarousel.scss"
+
+// Temp DB
 const opinions = [
   {id:0, text: "Estoy muy felix con mis compras, todas llegaron a tiempo hasta mi casa en Medellin. Armario listo y la jugueteria la estoy disfrutando.", author_name:"Camila Gonzales", author_pic: PictureGirl},
   {id:1, text: "El sistema de luces que me instalaron quedo perfecto. Voy para la segunda cosecha, y esos sistemas Floraflex dan un rendimiento sorprendente.", author_name:"Juan C. Arias", author_pic: PictureGuy},
@@ -58,13 +61,13 @@ export default function OpinionsCarousel() {
       >
         {opinions.map((opinion) => (
           <SwiperSlide key={opinion.id} className='flex flex-col bg-gray-200 rounded-lg'>
-            <div className="flex flex-row justify-start py-2 px-3 bg-green-700 rounded-t-lg">
-              <img className='min-[100px]:h-7 min-[640px]:h-8 min-[768px]:h-9 min-[100px]:w-7 min-[640px]:w-8 min-[768px]:w-9 mr-4 rounded-full' src={opinion.author_pic} alt="author selfie" />
-              <p className='min-[100px]:text-base min-[640px]:text-lg min-[768px]:text-xl min-[100px]:leading-7 min-[640px]:leading-9 min-[768px]:leading-9 text-white'>{opinion.author_name}</p>
+            <div className="flex flex-row justify-start py-1 px-3 bg-green-700 rounded-t-lg">
+              <img className='min-[100px]:h-7 min-[640px]:h-8 min-[768px]:h-8 min-[100px]:w-7 min-[640px]:w-8 min-[768px]:w-8 mr-4 rounded-full' src={opinion.author_pic} alt="author selfie" />
+              <p className='min-[100px]:text-base min-[640px]:text-lg min-[768px]:text-lg min-[100px]:leading-7 min-[640px]:leading-8 min-[768px]:leading-8 text-white'>{opinion.author_name}</p>
             </div>
             <div className='conversation pb-1 rounded-b-lg'>
-              <div className='conversation-container'>
-                <div className='message received pb-5 relative min-[100px]:text-sm min-[640px]:text-base min-[768px]:text-lg leading-6'>
+              <div className='conversation-container py-3'>
+                <div className='message received pb-5 relative min-[100px]:text-sm min-[640px]:text-base min-[768px]:text-base leading-6'>
                   {opinion.text}
                   <span className="flex flex-row justify-end absolute bottom-0 right-0">
                     <span className='text-zinc-400 text-xs leading-7'>10:25</span>

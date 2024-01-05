@@ -1,18 +1,17 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
-import './styles/SpecsCarousel.scss';
+// Pull Up // Images
 import DeliveryLogo from "../../static/Icons/DeliveryIcon.svg"
 import LegalHammer from "../../static/Icons/legal.svg"
 import QualitySeal from "../../static/Icons/quality-seal.svg"
 import CustomerService from "../../static/Icons/customer_service.svg"
 
+// Pull Up // DB
 const cardsData = [
     {id: 3, title: 'Pago Seguro', content: 'Compra segura con Mercado Pagos', icon: QualitySeal, icon_description: "Sello de Calidad"},
     {id: 2, title: 'Legal en Colombia', content: 'Hasta 20 plantas de uso personal', icon: LegalHammer, icon_description: "Plantas"},

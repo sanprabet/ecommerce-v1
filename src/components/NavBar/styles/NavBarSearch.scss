@@ -1,16 +1,5 @@
 @use "../../Shared/modules/globalVars" as globalVars;
 
-.navbar__search{
-    form{
-        background-color: #ededed;
-    }
-}
-
-.navbar__search--input{
-    @include globalVars.outfit-normal;
-    background-color: #ededed;
-}
-
 .navbar__search--input::placeholder{
     color: #212121;
 }

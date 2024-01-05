@@ -1,0 +1,12 @@
+@use "../../Shared/modules/globalVars" as globalVars;
+
+.navBarLogo--image{
+    aspect-ratio: 16 / 9;
+}
+
+.navbar__shopingCart__count{
+    @include globalVars.outfit-normal;
+    top: -10px;
+    right: -20px;
+    background-color: #FECE00;
+}

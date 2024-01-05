@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
-import ProductDisplaySmall from "./ProductDisplaySmall"
+import ProductDisplayCheckout from "./ProductDisplaySmall"
 
 // Styles and Images
 import ApplePipe from "../../static/Products/ApplePipe.png"
@@ -29,19 +29,13 @@ export default function ProductsCarouselSmall({products_per_page}) {
   return (
     <>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={'auto'}
         spaceBetween={10}
         loop={true}
-        breakpoints={{
-          100: {
-            slidesPerView: products_per_page,
-            spaceBetween: 5,
-          }
-        }}
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
-          }}
+        }}
         className="mySwiper w-full my-2"
         modules={[Pagination, Autoplay]}
         style={{
@@ -53,8 +47,8 @@ export default function ProductsCarouselSmall({products_per_page}) {
         }}
       >
         {products.map((product) => (
-            <SwiperSlide className='min-h-fit' key={product.id}>
-              <ProductDisplaySmall id={product.id} name={product.name} price={product.price} category={product.category} img={product.img} />
+            <SwiperSlide className='min-h-fit w-24' key={product.id}>
+              <ProductDisplayCheckout id={product.id} name={product.name} price={product.price} category={product.category} img={product.img} />
             </SwiperSlide>
         ))}
       </Swiper>

@@ -1,29 +1,26 @@
 import React, { useContext } from 'react';
 import Headroom from "react-headroom"
 
-// Contexts
+// Components
 import { isUserScrollAtTopContext, desktopNavBarSearchDropdownOpenContext } from "../components/Shared/Contexts";
-
-// Componenta
-import NavBarProducts from '../components/NavBar/NavBarProducts';
-import NavBarLogo from '../components/NavBar/NavBarLogo';
-import NavBarSearch from '../components/NavBar/NavBarSearch';
-import NavBarSearchIcon from '../components/NavBar/NavBarSearchIcon';
 import PromotionalStrip from '../components/Shared/PromotionalStrip';
-import { NavBarShoppingCartDesktop } from '../components/NavBar/NavBarShoppingCar';
+
+import { NavBarLogo,  NavBarSearchButton, NavBarShoppingCart, NavBarCategoriesButton } from '../components/NavBar/NavBarButtons';
+import DesktopNavBarCategories from '../components/NavBar/NavBarProducts';
+import NavBarSearch from '../components/NavBar/NavBarSearch';
 
 // Styles
 import './styles/NavBar.scss';
 
+// Export Components
 export function NavBarDesktop() {
   const { isAtTop } = useContext(isUserScrollAtTopContext)
   const displayPromotionalStrip = isAtTop? "": "hidden";
   
   const { setNavBarSearchDropdownOpen } = useContext(desktopNavBarSearchDropdownOpenContext)
-  const handleUnpin = () => setNavBarSearchDropdownOpen(false);
   
   return (
-    <Headroom onUnpin={handleUnpin} style={{zIndex: 10, backgroundColor: "white"}}>
+    <Headroom onUnpin={() => setNavBarSearchDropdownOpen(false)} style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className="w-full h-20 py-3 px-20 flex flex-row justify-between">
         <div className="flex">
@@ -31,15 +28,13 @@ export function NavBarDesktop() {
           <NavBarSearch />
         </div>
         <div className='my-auto'>
-          <NavBarShoppingCartDesktop />
+          <NavBarShoppingCart />
         </div>
       </div>
-      <NavBarProducts />
+      <DesktopNavBarCategories />
     </Headroom>
   );
 }
-
-// { width > 768? <FooterDesktop />:  <FooterMobile />}
 
 export function NavBarMobile(){
   const { isAtTop } = useContext( isUserScrollAtTopContext )
@@ -49,9 +44,12 @@ export function NavBarMobile(){
     <Headroom style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
       <div className=' w-full h-16 p-3 flex flex-row justify-between'>
-          <NavBarSearchIcon />
+        <div className='flex flex-row'>
+          <NavBarCategoriesButton />
+          <NavBarSearchButton />
+        </div>
           <NavBarLogo />
-          <NavBarShoppingCartDesktop />
+          <NavBarShoppingCart />
       </div>
     </Headroom>
   )

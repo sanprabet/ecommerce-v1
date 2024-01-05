@@ -11,17 +11,17 @@ export default function HomeBannerCarousel({images}) {
   return (
     <>
       <Swiper
-        spaceBetween={30}
+        spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-        delay: 3500,
-        disableOnInteraction: false,
+          delay: 3500,
+          disableOnInteraction: false,
         }}
         navigation={true} 
         modules={[Autoplay, Navigation]}
         className="mySwiper"
         >
-
+                                                
         {images.map((hero) => (
             <SwiperSlide key={hero.id} className='flex justify-center'>
                 <img src={hero.img} alt={hero.description} />
