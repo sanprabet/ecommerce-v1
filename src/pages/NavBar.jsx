@@ -3,7 +3,7 @@ import Headroom from "react-headroom"
 
 // Components
 import { isUserScrollAtTopContext, desktopNavBarSearchDropdownOpenContext } from "../components/Shared/Contexts";
-import PromotionalStrip from '../components/Shared/PromotionalStrip';
+import PromotionalStrip from '../components/NavBar/PromotionalStrip';
 
 import { NavBarLogo,  NavBarSearchButton, NavBarShoppingCart, NavBarCategoriesButton } from '../components/NavBar/NavBarButtons';
 import DesktopNavBarCategories from '../components/NavBar/NavBarProducts';
@@ -22,7 +22,7 @@ export function NavBarDesktop() {
   return (
     <Headroom onUnpin={() => setNavBarSearchDropdownOpen(false)} style={{zIndex: 10, backgroundColor: "white"}}>
       <PromotionalStrip displayConfig={displayPromotionalStrip} />
-      <div className="w-full h-20 py-3 px-20 flex flex-row justify-between">
+      <div className="w-full h-20 py-3 px-9 flex flex-row justify-between">
         <div className="flex">
           <NavBarLogo />
           <NavBarSearch />

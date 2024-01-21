@@ -35,7 +35,7 @@ function NavBarProductLink({category, link, subCategories}) {
 
 function DesktopNavBarCategories() {
   return (
-      <div className="navbar--down min-h-min w-full py-2 px-20 flex flex-row">
+      <div className="navbar--down min-h-min w-full py-2 px-9 flex flex-row">
         <ul className='flex flex-row flex-wrap'>
           <li>
             <NavBarProductLink category='GROWERS 🍃' link='/products' subCategories={[{id: 0, category: "Macetas y Cajas"}, {id: 1, category: "Semillas"}, {id: 2, category: "Luces"}, {id: 3, category: "Sensores"}]}/>

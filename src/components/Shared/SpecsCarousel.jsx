@@ -4,23 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-
-// Pull Up // Images
-import DeliveryLogo from "../../static/Icons/DeliveryIcon.svg"
-import LegalHammer from "../../static/Icons/legal.svg"
-import QualitySeal from "../../static/Icons/quality-seal.svg"
-import CustomerService from "../../static/Icons/customer_service.svg"
-
-// Pull Up // DB
-const cardsData = [
-    {id: 3, title: 'Pago Seguro', content: 'Compra segura con Mercado Pagos', icon: QualitySeal, icon_description: "Sello de Calidad"},
-    {id: 2, title: 'Legal en Colombia', content: 'Hasta 20 plantas de uso personal', icon: LegalHammer, icon_description: "Plantas"},
-    {id: 1, title: 'Desde 2016', content: 'Puntos fisicos en Bogota y Cali', icon: DeliveryLogo, icon_description: "Camion Entregas"},
-    {id: 4, title: 'Asesorias 24/7', content: '10 años ayudandote con tu autocultivo', icon: CustomerService, icon_description: "25/7"},
-]
   
 
-export default function SpecsCarousel() {
+export default function SpecsCarousel({cardsData}) {
   return (
     <>
       <Swiper

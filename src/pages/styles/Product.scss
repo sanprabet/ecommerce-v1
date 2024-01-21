@@ -1,0 +1,22 @@
+.ProductImagesDisplay{
+    width: 18rem;
+}
+
+.ProductAddCart{
+    max-width: 68rem;
+}
+
+@media (min-width: 1024px) {
+    .ProductImagesDisplay{
+        width: 22rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ProductImagesDisplay{
+        width: 30rem;
+    }
+}
+
+
+

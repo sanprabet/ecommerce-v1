@@ -5,10 +5,10 @@ import { dimensionsContext } from '../components/Shared/Contexts'
 
 import HomeCategory from '../components/Home/HomeCategory';
 import HomeBannerCarousel from "../components/Home/HomeBannerCarousel"
-
-import OpinionsCarousel from "../components/Shared/OpinionsCarousel"
-import ProductsCarouselBig from "../components/Shared/ProductsCarouselBig"
+import OpinionsCarousel from "../components/Home/OpinionsCarousel"
 import SpecsCarousel from "../components/Shared/SpecsCarousel"
+
+import ProductsCarouselBig from "../components/Shared/ProductsCarouselBig"
 
 // Info to Pull Up // Images
 import Category1 from "../static/Categories/ParaArmar.png"
@@ -47,6 +47,20 @@ const categories = [
   {id: 6, imageUrl: Category6, name: 'Cursos'}
 ]
 
+// Pull Up // Images
+import DeliveryLogo from "../static/Icons/DeliveryIcon.svg"
+import LegalHammer from "../static/Icons/legal.svg"
+import QualitySeal from "../static/Icons/quality-seal.svg"
+import CustomerService from "../static/Icons/customer_service.svg"
+
+// Pull Up // DB
+const cardsData = [
+    {id: 3, title: 'Pago Seguro', content: 'Compra segura con Mercado Pagos', icon: QualitySeal, icon_description: "Sello de Calidad"},
+    {id: 2, title: 'Legal en Colombia', content: 'Hasta 20 plantas de uso personal', icon: LegalHammer, icon_description: "Plantas"},
+    {id: 1, title: 'Desde 2016', content: 'Puntos fisicos en Bogota y Cali', icon: DeliveryLogo, icon_description: "Camion Entregas"},
+    {id: 4, title: 'Asesorias 24/7', content: '10 años ayudandote con tu autocultivo', icon: CustomerService, icon_description: "25/7"},
+]
+
 function Home() {
   const { width } = useContext(dimensionsContext)
   const HeroImages =  (width > 768)? HeroDesktop : HeroMobile;
@@ -56,7 +70,7 @@ function Home() {
         <HomeBannerCarousel images={HeroImages} />
       </section>
       <section>
-        <SpecsCarousel/>
+        <SpecsCarousel cardsData={cardsData}/>
       </section>
       <section className='bg-gray-100'>
         <h2 className='py-5 text-center text-2xl font-bold'>Más Vendidos</h2>

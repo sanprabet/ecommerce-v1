@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ProductDisplayCheckoutVertical from './ProductDisplayVertical'
-import ScrollableDiv from './ScrollableDiv'
+import ScrollableDiv from '../Shared/ScrollableDiv'
 
 import ApplePipe from "../../static/Products/ApplePipe.png"
 import MediumBudLightBong from "../../static/Products/MediumBudLightBong.png"
@@ -13,7 +13,7 @@ const cart = [
   {id: 2, name: 'Bong "Bud Light" 50cm', price: "60.000",  category: 'Bongs', img: MediumBudLightBong},
 ]
 
-function ProductsCarouselVertical() {
+function ProductsCarouselVertical({border}) {
   return (
     <ScrollableDiv heightTailwind={"h-72"} >
       {cart.map((product) => (
